@@ -1,0 +1,16 @@
+FASE 1:
+
+-Scaricare tweet con Python e salvarli su di un file senza filtri
+-Progettazione della base di dati e relativo schema ER
+-Schema architettura di sistema
+-Grafico web con ASP.NET con dati fittizi(vocabolo di tutto rispetto in bassa italia)
+
+FASE 2: 
+
+-Filtrare tweet per linguaggio di programmazione paese
+-Creazione database e relativa connessione con Python
+-Connessione database con C#
+
+FASE 3:
+
+
