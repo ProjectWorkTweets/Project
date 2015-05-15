@@ -7,10 +7,13 @@ FASE 1:
 
 FASE 2: 
 
--Filtrare tweet per linguaggio di programmazione paese
+-Filtrare tweet per linguaggio di programmazione/paese
 -Creazione database e relativa connessione con Python
 -Connessione database con C#
+-Grafico con dati fittizi presi da DB
 
 FASE 3:
 
-
+-Salvare dati su DB
+-Utilizzare c# per analizzare i dati e salvarli su DB
+-Costruire il grafico con i dati corretti presenti nel DB
