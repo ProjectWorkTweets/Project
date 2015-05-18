@@ -1,0 +1,1464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19117C82-FC81-4C7A-B442-D4C10F16F290}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bogles.Charts.Web</RootNamespace>
+    <AssemblyName>Bogles.Charts.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Security">
+      <HintPath>..\packages\Npgsql.2.2.5\lib\net45\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\packages\Npgsql.2.2.5\lib\net45\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.2\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\amcharts.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\funnel.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\gantt.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\gauge.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIcon.gif" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconBlack.gif" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconH.gif" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconHBlack.gif" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRectBig.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRectBigBlack.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRectBigBlackH.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRectBigH.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRectSmall.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRectSmallBlack.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRectSmallBlackH.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRectSmallH.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRoundBig.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRoundBigBlack.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRoundBigBlackH.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRoundBigH.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRoundSmall.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRoundSmallBlack.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRoundSmallBlackH.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\dragIconRoundSmallH.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\export.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\exportWhite.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\lens.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\lensWhite.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\lensWhite_old.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\images\lens_old.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\az.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\bg.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\de.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\es.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\fi.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\fo.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\fr.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\hr.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\hu.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\id.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\is.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\it.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\lt.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\lv.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\mk.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\mn.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\mt.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\nl.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\no.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\pl.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\pt.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\ro.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\ru.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\rw.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\sk.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\so.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\th.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\lang\tr.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern1.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern10.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern11.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern12.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern13.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern14.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern15.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern16.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern17.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern18.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern19.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern2.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern20.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern21.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern3.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern4.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern5.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern6.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern7.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern8.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\black\pattern9.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\chalk\pattern1.jpg" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\chalk\pattern1r.jpg" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\chalk\pattern2.jpg" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\chalk\pattern3.jpg" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\chalk\pattern4.jpg" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\chalk\pattern5.jpg" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\chalk\pattern6.jpg" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern1.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern10.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern11.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern12.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern13.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern14.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern15.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern16.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern17.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern18.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern19.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern2.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern20.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern21.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern3.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern4.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern5.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern6.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern7.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern8.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\patterns\white\pattern9.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\pie.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\dataloader.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\dataloader.min.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\map_json.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\pie_csv.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\pie_json.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\serial2_json.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\serial_csv.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\serial_json.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\stock_csv_data_and_events.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\lang\en.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\lang\lt.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\license.txt" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\export.config.advanced.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\export.config.default.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\funnel.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\gantt.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\gauge.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\images\bicycle.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\images\car.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\images\motorcycle.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\index.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\map.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\pie1.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\pie2.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\pie3.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\pie4.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\radar.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\serial1.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\serial2.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\serial3.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\stock.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\examples\xy.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\export.css" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\export.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\export.min.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\blob.js\blob.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\fabric.js\fabric.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\fabric.js\fabric.min.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\FileSaver.js\FileSaver.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\jszip\jszip.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\jszip\jszip.min.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\pdfmake\pdfmake.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\pdfmake\pdfmake.min.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\pdfmake\vfs_fonts.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\xlsx\xlsx.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\xlsx\xlsx.min.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\funnel.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\gantt.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\gauge.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\images\bicycle.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\images\car.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\images\motorcycle.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\index.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\map.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\pie1.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\pie2.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\pie3.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\radar.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\serial1.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\serial2.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\serial3.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\stock.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\examples\xy.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\license.txt" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\responsive.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\responsive.min.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\radar.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\serial.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\themes\black.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\themes\chalk.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\themes\dark.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\themes\light.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\themes\patterns.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\xy.js" />
+    <Content Include="Scripts\amcharts_3.14.2.free\changeLog.txt" />
+    <Content Include="Scripts\amcharts_3.14.2.free\images\logo.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\images\style.css" />
+    <Content Include="Scripts\amcharts_3.14.2.free\index.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\licence.txt" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\angularGauge.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\angularGaugeWithTwoAxes.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\area100PercentStacked.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\areaStacked.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\areaWithTimeBasedData.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\bar3D.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\barAndLineMix.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\barClustered.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\barFloating.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\barStacked.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\barWithBackgroundImage.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\bulletChart.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\candleStick.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\candleStickProMode.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\clock.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\clockWithTwoFaces.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\column100PercentStacked.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\column3D.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\column3DStacked.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\columnAndLineMix.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\columnCylinders.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\columnRotatedSeries.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\columnSimple.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\columnStacked.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\columnStackedAndClustered.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\columnWithGradientFills.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\columnWithImages.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\columnWithPatterns.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\errorChart.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\fillBetweenTwoLines.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\funnelChart.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\handDrawnChart.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\images\0.gif" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\images\1.gif" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\images\2.gif" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\images\3.gif" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\images\bg.jpg" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\images\bgSky.jpg" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\images\bicycle.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\images\board.jpg" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\images\car.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\images\motorcycle.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\images\redstar.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\images\star.png" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineSmoothed.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineStep.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineStepNoRisers.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineWithChangingColor.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineWithCustomBullets.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineWithDataGaps.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineWithDateBasedData.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineWithDifferentBulletSizes.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineWithDurationOnValueAxis.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineWithFilledValueRanges.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineWithLogarithmicValueAxis.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineWithMultipleValueAxes.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineWithReversedValueAxis.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\lineWithTrendLines.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\microCharts.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\ohlc.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\pie3D.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\pieDonut3D.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\pieSimple.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\pieWithLegend.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\pieWithPatterns.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\pyramidChart.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\pyramidChart3D.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\radarPolar.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\radarSimple.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\style.css" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\waterFallChart.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\xyBubbleSimple.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\xyBubbleWithZoom.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\xyDateBased.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\xyError.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\xyScatter.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_CSS_animations.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_exporting_to_multiple_formats.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_angularGauge.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_areaStacked.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_barAndLineMix.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_ganttDateBased.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_ganttTimeBased.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_lineWithFilledValueRanges.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_lineWithScrollAndZoom.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_lineWithTrendLines.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_pieWithLegend.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_radarSimple.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_usingDifferentLanguage.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_xyBubbleWithZoom.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_JSON_xyWithGuides.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_SVG_filters.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\samples\_usingThemes.html" />
+    <Content Include="Scripts\amcharts_3.14.2.free\thirdPartySoftwareList.txt" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\ammap.css" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\ammap.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\ammap_amcharts_extension.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\arrowDown.gif" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\arrowUp.gif" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\export.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\homeIcon.gif" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\homeIconWhite.gif" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\minus.gif" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\panDown.gif" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\panLeft.gif" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\panRight.gif" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\panUp.gif" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\plus.gif" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\xIcon.gif" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\images\xIconH.gif" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\af.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\am.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ar.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\as.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\az.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\be.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\bg.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\bn.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\bo.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\bs.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\byn.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ca.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\cs.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\cy.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\da.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\de.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\dv.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\dz.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\el.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\eo.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\es.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\et.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\eu.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\fa.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\fi.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\fil.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\fo.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\fr.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\fur.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ga.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\gez.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\gl.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\gsw.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\gu.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\gv.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ha.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\haw.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\he.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\hi.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\hr.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\hu.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\hy.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ia.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\id.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ii.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\is.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\it.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ja.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ka.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\kk.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\kl.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\km.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\kn.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ko.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\kok.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ku.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\kw.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ky.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ln.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\lo.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\lt.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\lv.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\mk.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ml.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\mn.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\mr.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ms.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\mt.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\my.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\nb.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\nds.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ne.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\nl.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\nn.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\oc.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\om.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\or.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\pa.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\pl.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ps.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\pt.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ro.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ru.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\rw.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\sa.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\se.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\si.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\sid.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\sk.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\sl.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\so.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\sq.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\sr.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\sv.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\sw.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\syr.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ta.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\te.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\tg.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\th.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\tig.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\to.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\tr.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\trv.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\tt.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\uk.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\ur.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\uz.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\vi.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\wal.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\yo.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\zh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\lang\zu.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\albaniaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\albaniaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\algeriaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\algeriaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\andorraHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\andorraLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\angolaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\angolaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\argentinaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\argentinaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\armeniaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\armeniaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\australiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\australiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\austriaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\austriaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\azerbaijanHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\azerbaijanLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bahrainHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bahrainLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bangladeshHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bangladeshLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\belarusHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\belarusLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\belgiumHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\belgiumLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\belizeHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\belizeLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bhutanHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bhutanLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\boliviaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\boliviaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bosniaHerzegovinaCantonsHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bosniaHerzegovinaCantonsLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bosniaHerzegovinaRegionsHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bosniaHerzegovinaRegionsLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\botswanaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\botswanaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\brazilHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\brazilLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bruneiDarussalamHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bruneiDarussalamLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bulgariaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\bulgariaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\burkinaFasoHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\burkinaFasoLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\burundiHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\burundiLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\cambodiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\cambodiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\cameroonHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\cameroonLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\canadaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\canadaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\capeVerdeHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\capeVerdeLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\centralAfricanRepublicHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\centralAfricanRepublicLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\chadHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\chadLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\chileHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\chileLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\chinaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\chinaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\colombiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\colombiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\congoDRHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\congoDRLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\congoHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\congoLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\continentsHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\continentsLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\costaRicaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\costaRicaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\croatiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\croatiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\cyprusHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\cyprusLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\cyprusNorthernCyprusHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\cyprusNorthernCyprusLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\czechRepublicHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\czechRepublicLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\denmarkHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\denmarkLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\djiboutiHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\djiboutiLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\dominicanRepublicHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\dominicanRepublicLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\ecuadorHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\ecuadorLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\egyptHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\egyptLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\elSalvadorHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\elSalvadorLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\estoniaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\estoniaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\faroeIslandsHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\finlandHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\finlandLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\franceDepartmentsHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\franceDepartmentsLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\franceHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\franceLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\georgiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\georgiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\georgiaSouthOssetiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\georgiaSouthOssetiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\germanyHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\germanyLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\greeceHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\greeceLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\guineaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\guineaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\hondurasHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\hondurasLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\hongKongHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\hongKongLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\hungaryHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\hungaryLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\icelandHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\icelandLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\indiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\indiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\indonesiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\indonesiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\irelandHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\irelandLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\israelHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\israelLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\israelPalestineHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\israelPalestineLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\italyHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\italyLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\japanHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\japanLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\kazakhstanHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\kazakhstanLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\kosovoHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\kosovoLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\kyrgyzstanHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\kyrgyzstanLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\latviaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\latviaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\liechtensteinHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\lithuaniaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\lithuaniaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\luxembourgHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\luxembourgLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\macedoniaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\macedoniaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\malaysiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\malaysiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\maliHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\maliLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\maltaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\mexicoHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\mexicoLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\moldovaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\moldovaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\montenegroHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\montenegroLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\moroccoHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\moroccoLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\moroccoWesternSaharaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\moroccoWesternSaharaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\nepalHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\nepalLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\netherlandsHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\netherlandsLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\newZealandHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\newZealandLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\nigeriaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\nigeriaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\norwayHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\norwayLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\omanHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\omanLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\pakistanHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\pakistanLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\palestineHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\palestineLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\peruHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\peruLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\philippinesHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\philippinesLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\polandHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\polandLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\portugalHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\portugalLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\portugalRegionsHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\portugalRegionsLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\qatarHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\qatarLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\romaniaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\romaniaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\russiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\russiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\sanMarinoHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\sanMarinoLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\saudiArabiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\saudiArabiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\serbiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\serbiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\serbiaNoKosovoHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\serbiaNoKosovoLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\singaporeHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\singaporeLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\slovakiaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\slovakiaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\sloveniaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\sloveniaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\southAfricaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\southAfricaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\southKoreaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\southKoreaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\spain2High.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\spain2Low.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\spainHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\spainLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\spainProvincesHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\spainProvincesLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\sriLankaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\sriLankaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\swedenHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\swedenLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\switzerlandHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\switzerlandLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\syriaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\syriaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\taiwanHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\taiwanLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\tajikistanHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\tajikistanLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\thailandHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\thailandLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\turkeyHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\turkeyLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\ukraineHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\ukraineLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\unitedArabEmiratesHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\unitedArabEmiratesLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\unitedKingdomHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\unitedKingdomLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\usa2High.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\usa2Low.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\usaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\usaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\usaMercatorHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\usaMercatorLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\usaTerritoriesHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\usaTerritoriesLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\uzbekistanHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\uzbekistanLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\venezuelaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\venezuelaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\vietnamHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\vietnamLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\worldHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\worldKashmir2Low.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\worldKashmir2WithAntarcticaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\worldLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\worldRussiaSplitHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\worldRussiaSplitLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\worldRussiaSplitWithAntarcticaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\worldRussiaSplitWithAntarcticaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\worldWithAntarcticaHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\worldWithAntarcticaLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\yemenHigh.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\js\yemenLow.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\albaniaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\albaniaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\algeriaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\algeriaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\andorraHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\andorraLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\angolaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\angolaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\argentinaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\argentinaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\armeniaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\armeniaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\australiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\australiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\austriaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\austriaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\azerbaijanHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\azerbaijanLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bahrainHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bahrainLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bangladeshHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bangladeshLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\belarusHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\belarusLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\belgiumHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\belgiumLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\belizeHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\belizeLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bhutanHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bhutanLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\boliviaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\boliviaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bosniaHerzegovinaCantonsHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bosniaHerzegovinaCantonsLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bosniaHerzegovinaRegionsHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bosniaHerzegovinaRegionsLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\botswanaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\botswanaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\brazilHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\brazilLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bruneiDarussalamHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bruneiDarussalamLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bulgariaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\bulgariaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\burkinaFasoHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\burkinaFasoLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\burundiHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\burundiLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\cambodiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\cambodiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\cameroonHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\cameroonLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\canadaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\canadaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\capeVerdeHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\capeVerdeLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\centralAfricanRepublicHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\centralAfricanRepublicLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\chadHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\chadLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\chileHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\chileLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\chinaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\chinaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\colombiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\colombiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\congoDRHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\congoDRLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\congoHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\congoLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\continentsHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\continentsLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\costaRicaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\costaRicaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\croatiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\croatiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\cyprusHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\cyprusLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\cyprusNorthernCyprusHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\cyprusNorthernCyprusLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\czechRepublicHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\czechRepublicLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\denmarkHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\denmarkLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\djiboutiHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\djiboutiLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\dominicanRepublicHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\dominicanRepublicLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\ecuadorHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\ecuadorLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\egyptHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\egyptLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\elSalvadorHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\elSalvadorLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\estoniaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\estoniaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\faroeIslandsHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\finlandHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\finlandLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\franceDepartmentsHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\franceDepartmentsLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\franceHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\franceLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\georgiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\georgiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\georgiaSouthOssetiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\georgiaSouthOssetiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\germanyHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\germanyLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\greeceHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\greeceLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\guineaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\guineaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\hondurasHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\hondurasLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\hongKongHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\hongKongLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\hungaryHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\hungaryLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\icelandHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\icelandLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\indiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\indiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\indonesiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\indonesiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\irelandHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\irelandLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\israelHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\israelLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\israelPalestineHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\israelPalestineLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\italyHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\italyLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\japanHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\japanLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\kazakhstanHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\kazakhstanLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\kosovoHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\kosovoLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\kyrgyzstanHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\kyrgyzstanLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\latviaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\latviaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\liechtensteinHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\lithuaniaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\lithuaniaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\luxembourgHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\luxembourgLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\macedoniaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\macedoniaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\malaysiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\malaysiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\maliHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\maliLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\maltaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\mexicoHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\mexicoLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\moldovaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\moldovaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\montenegroHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\montenegroLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\moroccoHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\moroccoLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\moroccoWesternSaharaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\moroccoWesternSaharaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\nepalHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\nepalLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\netherlandsHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\netherlandsLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\newZealandHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\newZealandLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\nigeriaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\nigeriaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\norwayHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\norwayLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\omanHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\omanLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\pakistanHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\pakistanLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\palestineHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\palestineLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\peruHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\peruLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\philippinesHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\philippinesLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\polandHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\polandLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\portugalHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\portugalLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\portugalRegionsHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\portugalRegionsLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\qatarHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\qatarLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\romaniaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\romaniaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\russiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\russiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\sanMarinoHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\sanMarinoLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\saudiArabiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\saudiArabiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\serbiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\serbiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\serbiaNoKosovoHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\serbiaNoKosovoLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\singaporeHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\singaporeLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\slovakiaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\slovakiaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\sloveniaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\sloveniaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\southAfricaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\southAfricaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\southKoreaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\southKoreaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\spain2High.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\spain2Low.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\spainHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\spainLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\spainProvincesHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\spainProvincesLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\sriLankaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\sriLankaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\swedenHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\swedenLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\switzerlandHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\switzerlandLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\syriaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\syriaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\taiwanHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\taiwanLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\tajikistanHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\tajikistanLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\thailandHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\thailandLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\turkeyHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\turkeyLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\ukraineHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\ukraineLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\unitedArabEmiratesHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\unitedArabEmiratesLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\unitedKingdomHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\unitedKingdomLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\usa2High.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\usa2Low.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\usaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\usaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\usaMercatorHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\usaMercatorLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\usaTerritoriesHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\usaTerritoriesLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\uzbekistanHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\uzbekistanLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\venezuelaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\venezuelaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\vietnamHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\vietnamLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\worldHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\worldKashmir2Low.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\worldKashmir2WithAntarcticaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\worldLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\worldRussiaSplitHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\worldRussiaSplitLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\worldRussiaSplitWithAntarcticaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\worldRussiaSplitWithAntarcticaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\worldWithAntarcticaHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\worldWithAntarcticaLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\yemenHigh.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\maps\svg\yemenLow.svg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern1.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern10.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern11.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern12.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern13.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern14.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern15.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern16.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern17.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern18.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern19.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern2.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern20.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern21.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern3.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern4.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern5.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern6.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern7.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern8.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\black\pattern9.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\chalk\pattern1.jpg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\chalk\pattern1r.jpg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\chalk\pattern2.jpg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\chalk\pattern3.jpg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\chalk\pattern4.jpg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\chalk\pattern5.jpg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\chalk\pattern6.jpg" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern1.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern10.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern11.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern12.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern13.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern14.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern15.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern16.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern17.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern18.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern19.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern2.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern20.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern21.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern3.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern4.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern5.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern6.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern7.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern8.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\patterns\white\pattern9.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\dataloader.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\dataloader.min.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\map_json.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\pie_csv.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\pie_json.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\serial2_json.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\serial_csv.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\serial_json.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\stock_csv_data_and_events.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\lang\en.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\lang\lt.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\license.txt" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\export.config.advanced.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\export.config.default.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\funnel.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\gantt.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\gauge.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\images\bicycle.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\images\car.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\images\motorcycle.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\index.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\map.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\pie1.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\pie2.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\pie3.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\pie4.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\radar.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\serial1.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\serial2.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\serial3.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\stock.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\examples\xy.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\export.css" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\export.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\export.min.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\blob.js\blob.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\fabric.js\fabric.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\fabric.js\fabric.min.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\FileSaver.js\FileSaver.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\jszip\jszip.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\jszip\jszip.min.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\pdfmake\pdfmake.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\pdfmake\pdfmake.min.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\pdfmake\vfs_fonts.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\xlsx\xlsx.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\xlsx\xlsx.min.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\funnel.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\gantt.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\gauge.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\images\bicycle.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\images\car.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\images\motorcycle.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\index.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\map.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\pie1.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\pie2.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\pie3.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\radar.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\serial1.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\serial2.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\serial3.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\stock.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\examples\xy.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\license.txt" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\responsive.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\responsive.min.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\themes\black.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\themes\chalk.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\themes\dark.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\themes\light.js" />
+    <Content Include="Scripts\ammap_3.14.2.free\changeLog.txt" />
+    <Content Include="Scripts\ammap_3.14.2.free\images\logo.png" />
+    <Content Include="Scripts\ammap_3.14.2.free\images\style.css" />
+    <Content Include="Scripts\ammap_3.14.2.free\index.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\licence.txt" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\developerMode.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\drillDownMap.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\flightRoutes.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\groupedCountries.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\heatMap.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\images\board.jpg" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\mapWithBubbles.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\mapWithPatterns.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\singleCountryMap.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\style.css" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\worldCapitals.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\zoomingToCountries.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_CSS_animations.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_exporting_to_multiple_formats.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_JSON_developerMode.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_JSON_drillDownMap.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_JSON_flightRoutes.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_JSON_groupedCountries.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_JSON_heatMap.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_JSON_mapWithPatterns.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_JSON_singleCountryMap.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_JSON_translatedCountryNames.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_JSON_worldCapitals.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_JSON_zoomingToCountries.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_SVG_filters.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\samples\_usingThemes.html" />
+    <Content Include="Scripts\ammap_3.14.2.free\thirdPartySoftwareList.txt" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\data\map.json" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\data\MSFT.csv" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\data\MSFT_events.csv" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\data\pie.csv" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\data\pie.json" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\data\serial.csv" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\data\serial.json" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\data\serial2.json" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\examples\data\TXN.csv" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\dataloader\readme.md" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\fabric.js\.travis.yml" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\pdfmake\pdfmake.min.map" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\libs\xlsx\LICENSE" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\LICENSE" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\export\README.md" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\readme.md" />
+    <Content Include="Scripts\amcharts_3.14.2.free\amcharts\plugins\responsive\responsive.min.js.map" />
+    <None Include="Properties\PublishProfiles\bogles-prova - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\bogles-prova - Web Deploy.pubxml" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\data\map.json" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\data\MSFT.csv" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\data\MSFT_events.csv" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\data\pie.csv" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\data\pie.json" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\data\serial.csv" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\data\serial.json" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\data\serial2.json" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\examples\data\TXN.csv" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\dataloader\readme.md" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\fabric.js\.travis.yml" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\pdfmake\pdfmake.min.map" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\libs\xlsx\LICENSE" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\LICENSE" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\export\README.md" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\readme.md" />
+    <Content Include="Scripts\ammap_3.14.2.free\ammap\plugins\responsive\responsive.min.js.map" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Graphs.cshtml" />
+    <Content Include="Views\Home\MapChart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bogles.Charts.Data\Bogles.Charts.Data.csproj">
+      <Project>{4874acf1-7d40-4cc6-b349-025affd93e83}</Project>
+      <Name>Bogles.Charts.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50235</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50235/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

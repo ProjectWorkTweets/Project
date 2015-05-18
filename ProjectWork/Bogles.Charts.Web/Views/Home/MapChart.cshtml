@@ -1,0 +1,284 @@
+﻿
+@{
+    ViewBag.Title = "MapChart";
+    
+}
+
+
+<h2>MapChart</h2>
+
+
+<div id="mapdiv"></div>
+
+<div id="prova">RISULTATO : @Html.Raw(ViewBag.value)  dovrebbe essere 488</div>
+
+@section scripts {
+    <script type="text/javascript">
+
+    $(function () {
+
+
+            var nations = '{ "ndata" : [' +
+'{ "id":"CH" , "title":"Switzerland", "customData":"c#" , "color":"red", "groupId" : "c#" },' +
+'{ "id":"AT" , "title":"Austria" },' +
+'{ "id":"IE" , "title":"IRELAND" }]}';
+
+            var jnations = JSON.parse(nations);
+
+
+
+
+            var dic_nations = [];
+            dic_nations.push({ "IT": "Italy" }, {"CH" : "Switzerland"});
+
+            var map = AmCharts.makeChart("mapdiv", {
+
+                type: "map",
+                "theme": "light",
+                path: "/Scripts/ammap_3.14.2.free/ammap/",
+
+                dataProvider: {
+                    map: "worldLow",
+                    zoomLevel: 3.5,
+                    zoomLongitude: 10,
+                    zoomLatitude: 52,
+                    areas: [
+                        {
+                            //title: jnations.ndata[1].title,
+                            title : dic_nations["CH"],
+                            id: "CH",
+                            color: "#67b7dc",
+                            customData: "c#",
+                            groupId: "c#"
+                        }, {
+                        title: "Austria",
+                        id: "AT",
+                        color: "#67b7dc",
+                        customData: "c#",
+                        groupId: "c#"
+                    }, {
+                        title: "Ireland",
+                        id: "IE",
+                        color: "#67b7dc",
+                        customData: "c#",
+                        groupId: "c#"
+                    }, {
+                        title: "Denmark",
+                        id: "DK",
+                        color: "#67b7dc",
+                        customData: "c#",
+                        groupId: "c#"
+                    }, {
+                        title: "Finland",
+                        id: "FI",
+                        color: "#67b7dc",
+                        customData: "c#",
+                        groupId: "c#"
+                    }, {
+                        title: "Sweden",
+                        id: "SE",
+                        color: "#67b7dc",
+                        customData: "c#",
+                        groupId: "c#"
+                    }, {
+                        title: "Great Britain",
+                        id: "GB",
+                        color: "#67b7dc",
+                        customData: "c#",
+                        groupId: "c#"
+                    }, {
+                        title: "Italy",
+                        id: "IT",
+                        color: "#67b7dc",
+                        customData: "c#",
+                        groupId: "c#"
+                    }, {
+                        title: "France",
+                        id: "FR",
+                        color: "#67b7dc",
+                        customData: "c#",
+                        groupId: "c#"
+                    }, {
+                        title: "Spain",
+                        id: "ES",
+                        color: "#67b7dc",
+                        customData: "ruby",
+                        groupId: "ruby"
+                    }, {
+                        title: "Greece",
+                        id: "GR",
+                        color: "#67b7dc",
+                        customData: "c++",
+                        groupId: "c++"
+                    }, {
+                        title: "Germany",
+                        id: "DE",
+                        color: "#67b7dc",
+                        customData: "c#",
+                        groupId: "c#"
+                    }, {
+                        title: "Belgium",
+                        id: "BE",
+                        color: "#67b7dc",
+                        customData: "c#",
+                        groupId: "c#"
+                    }, {
+                        title: "Luxembourg",
+                        id: "LU",
+                        color: "#67b7dc",
+                        customData: "c#",
+                        groupId: "c#"
+                    }, {
+                        title: "Netherlands",
+                        id: "NL",
+                        color: "#67b7dc",
+                        customData: "c#",
+                        groupId: "c#"
+                    }, {
+                        title: "Portugal",
+                        id: "PT",
+                        color: "#67b7dc",
+                        customData: "ruby",
+                        groupId: "c#"
+                    },
+
+                      {
+                          title: "Lithuania",
+                          id: "LT",
+                          color: "#ebdb8b",
+                          customData: "Java",
+                          groupId: "Java"
+                      }, {
+                          title: "Latvia",
+                          id: "LV",
+                          color: "#ebdb8b",
+                          customData: "Java",
+                          groupId: "Java"
+                      }, {
+                          title: "Czech Republic ",
+                          id: "CZ",
+                          color: "#ebdb8b",
+                          customData: "Java",
+                          groupId: "Java"
+                      }, {
+                          title: "Slovakia",
+                          id: "SK",
+                          color: "#ebdb8b",
+                          customData: "Java",
+                          groupId: "Java"
+                      }, {
+                          title: "Slovenia",
+                          id: "SI",
+                          color: "#ebdb8b",
+                          customData: "Java",
+                          groupId: "Java"
+                      }, {
+                          title: "Estonia",
+                          id: "EE",
+                          color: "#ebdb8b",
+                          customData: "Java",
+                          groupId: "Java"
+                      }, {
+                          title: "Hungary",
+                          id: "HU",
+                          color: "#ebdb8b",
+                          customData: "Java",
+                          groupId: "Java"
+                      }, {
+                          title: "Cyprus",
+                          id: "CY",
+                          color: "#ebdb8b",
+                          customData: "Java",
+                          groupId: "Java"
+                      }, {
+                          title: "Malta",
+                          id: "MT",
+                          color: "#ebdb8b",
+                          customData: "Java",
+                          groupId: "Java"
+                      }, {
+                          title: "Poland",
+                          id: "PL",
+                          color: "#ebdb8b",
+                          customData: "Java",
+                          groupId: "Java"
+                      },
+
+                      {
+                          title: "Romania",
+                          id: "RO",
+                          color: "#83c2ba",
+                          customData: "python",
+                          groupId: "python"
+                      }, {
+                          title: "Bulgaria",
+                          id: "BG",
+                          color: "#83c2ba",
+                          customData: "python",
+                          groupId: "python"
+                      }, {
+                          title: "Croatia",
+                          id: "HR",
+                          color: "#db8383",
+                          customData: "javascript",
+                          groupId: "javascript"
+                      }
+                    ]
+                },
+
+                areasSettings: {
+                    rollOverOutlineColor: "#black",
+                    rollOverColor: "green",
+                    alpha: 0.8,
+                    unlistedAreasAlpha: 0.1,
+                    balloonText: "[[title]] main language is : [[customData]]"
+                },
+
+
+                legend: {
+                    width: "100%",
+                    marginRight: 27,
+                    marginLeft: 27,
+                    equalWidths: false,
+                    backgroundAlpha: 0.5,
+                    backgroundColor: "#FFFFFF",
+                    borderColor: "#ffffff",
+                    borderAlpha: 1,
+                    top: 550,
+                    left: 0,
+                    horizontalGap: 10,
+                    data: [{
+                        title: "C#",
+                        color: "#67b7dc"
+                    }, {
+                        title: "Java",
+                        color: "#ebdb8b"
+                    }, {
+                        title: "Python",
+                        color: "#83c2ba"
+                    }, {
+                        title: "javascript",
+                        color: "#db8383"
+                    }]
+                },
+                "export": {
+                    "enabled": true
+                }
+
+            });
+
+
+
+
+        })
+
+    </script>
+}
+
+<script src="~/Scripts/ammap_3.14.2.free/ammap/ammap.js"></script>
+<script src="~/Scripts/amcharts_3.14.2.free/amcharts/themes/light.js"></script>
+<script src="~/Scripts/ammap_3.14.2.free/ammap/maps/js/worldLow.js"></script>
+
+
+
+
