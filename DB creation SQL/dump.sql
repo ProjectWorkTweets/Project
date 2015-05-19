@@ -16,7 +16,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: countries; Type: TABLE; Schema: public; Owner: ecommerce; Tablespace: 
+-- Name: countries; Type: TABLE; Schema: public; Owner: enrico; Tablespace: 
 --
 
 CREATE TABLE countries (
@@ -25,10 +25,10 @@ CREATE TABLE countries (
 );
 
 
-ALTER TABLE countries OWNER TO ecommerce;
+ALTER TABLE countries OWNER TO enrico;
 
 --
--- Name: countrylanguage_id_seq; Type: SEQUENCE; Schema: public; Owner: ecommerce
+-- Name: countrylanguage_id_seq; Type: SEQUENCE; Schema: public; Owner: enrico
 --
 
 CREATE SEQUENCE countrylanguage_id_seq
@@ -39,10 +39,10 @@ CREATE SEQUENCE countrylanguage_id_seq
     CACHE 1;
 
 
-ALTER TABLE countrylanguage_id_seq OWNER TO ecommerce;
+ALTER TABLE countrylanguage_id_seq OWNER TO enrico;
 
 --
--- Name: country_language; Type: TABLE; Schema: public; Owner: ecommerce; Tablespace: 
+-- Name: country_language; Type: TABLE; Schema: public; Owner: enrico; Tablespace: 
 --
 
 CREATE TABLE country_language (
@@ -54,10 +54,10 @@ CREATE TABLE country_language (
 );
 
 
-ALTER TABLE country_language OWNER TO ecommerce;
+ALTER TABLE country_language OWNER TO enrico;
 
 --
--- Name: languagetweet_id_seq; Type: SEQUENCE; Schema: public; Owner: ecommerce
+-- Name: languagetweet_id_seq; Type: SEQUENCE; Schema: public; Owner: enrico
 --
 
 CREATE SEQUENCE languagetweet_id_seq
@@ -68,10 +68,10 @@ CREATE SEQUENCE languagetweet_id_seq
     CACHE 1;
 
 
-ALTER TABLE languagetweet_id_seq OWNER TO ecommerce;
+ALTER TABLE languagetweet_id_seq OWNER TO enrico;
 
 --
--- Name: language_tweet; Type: TABLE; Schema: public; Owner: ecommerce; Tablespace: 
+-- Name: language_tweet; Type: TABLE; Schema: public; Owner: enrico; Tablespace: 
 --
 
 CREATE TABLE language_tweet (
@@ -81,10 +81,10 @@ CREATE TABLE language_tweet (
 );
 
 
-ALTER TABLE language_tweet OWNER TO ecommerce;
+ALTER TABLE language_tweet OWNER TO enrico;
 
 --
--- Name: languages; Type: TABLE; Schema: public; Owner: ecommerce; Tablespace: 
+-- Name: languages; Type: TABLE; Schema: public; Owner: enrico; Tablespace: 
 --
 
 CREATE TABLE languages (
@@ -93,10 +93,10 @@ CREATE TABLE languages (
 );
 
 
-ALTER TABLE languages OWNER TO ecommerce;
+ALTER TABLE languages OWNER TO enrico;
 
 --
--- Name: tweets; Type: TABLE; Schema: public; Owner: ecommerce; Tablespace: 
+-- Name: tweets; Type: TABLE; Schema: public; Owner: enrico; Tablespace: 
 --
 
 CREATE TABLE tweets (
@@ -107,54 +107,54 @@ CREATE TABLE tweets (
 );
 
 
-ALTER TABLE tweets OWNER TO ecommerce;
+ALTER TABLE tweets OWNER TO enrico;
 
 --
--- Data for Name: countries; Type: TABLE DATA; Schema: public; Owner: ecommerce
---
-
-
-
---
--- Data for Name: country_language; Type: TABLE DATA; Schema: public; Owner: ecommerce
+-- Data for Name: countries; Type: TABLE DATA; Schema: public; Owner: enrico
 --
 
 
 
 --
--- Name: countrylanguage_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ecommerce
+-- Data for Name: country_language; Type: TABLE DATA; Schema: public; Owner: enrico
+--
+
+
+
+--
+-- Name: countrylanguage_id_seq; Type: SEQUENCE SET; Schema: public; Owner: enrico
 --
 
 SELECT pg_catalog.setval('countrylanguage_id_seq', 1, false);
 
 
 --
--- Data for Name: language_tweet; Type: TABLE DATA; Schema: public; Owner: ecommerce
+-- Data for Name: language_tweet; Type: TABLE DATA; Schema: public; Owner: enrico
 --
 
 
 
 --
--- Data for Name: languages; Type: TABLE DATA; Schema: public; Owner: ecommerce
+-- Data for Name: languages; Type: TABLE DATA; Schema: public; Owner: enrico
 --
 
 
 
 --
--- Name: languagetweet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ecommerce
+-- Name: languagetweet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: enrico
 --
 
 SELECT pg_catalog.setval('languagetweet_id_seq', 1, false);
 
 
 --
--- Data for Name: tweets; Type: TABLE DATA; Schema: public; Owner: ecommerce
+-- Data for Name: tweets; Type: TABLE DATA; Schema: public; Owner: enrico
 --
 
 
 
 --
--- Name: countries_pkey; Type: CONSTRAINT; Schema: public; Owner: ecommerce; Tablespace: 
+-- Name: countries_pkey; Type: CONSTRAINT; Schema: public; Owner: enrico; Tablespace: 
 --
 
 ALTER TABLE ONLY countries
@@ -162,7 +162,7 @@ ALTER TABLE ONLY countries
 
 
 --
--- Name: country_language_pkey; Type: CONSTRAINT; Schema: public; Owner: ecommerce; Tablespace: 
+-- Name: country_language_pkey; Type: CONSTRAINT; Schema: public; Owner: enrico; Tablespace: 
 --
 
 ALTER TABLE ONLY country_language
@@ -170,7 +170,7 @@ ALTER TABLE ONLY country_language
 
 
 --
--- Name: language_tweet_pkey; Type: CONSTRAINT; Schema: public; Owner: ecommerce; Tablespace: 
+-- Name: language_tweet_pkey; Type: CONSTRAINT; Schema: public; Owner: enrico; Tablespace: 
 --
 
 ALTER TABLE ONLY language_tweet
@@ -178,7 +178,7 @@ ALTER TABLE ONLY language_tweet
 
 
 --
--- Name: languages_pkey; Type: CONSTRAINT; Schema: public; Owner: ecommerce; Tablespace: 
+-- Name: languages_pkey; Type: CONSTRAINT; Schema: public; Owner: enrico; Tablespace: 
 --
 
 ALTER TABLE ONLY languages
@@ -186,7 +186,7 @@ ALTER TABLE ONLY languages
 
 
 --
--- Name: tweets_pkey; Type: CONSTRAINT; Schema: public; Owner: ecommerce; Tablespace: 
+-- Name: tweets_pkey; Type: CONSTRAINT; Schema: public; Owner: enrico; Tablespace: 
 --
 
 ALTER TABLE ONLY tweets
@@ -194,7 +194,7 @@ ALTER TABLE ONLY tweets
 
 
 --
--- Name: country_language_country_fk_fkey; Type: FK CONSTRAINT; Schema: public; Owner: ecommerce
+-- Name: country_language_country_fk_fkey; Type: FK CONSTRAINT; Schema: public; Owner: enrico
 --
 
 ALTER TABLE ONLY country_language
@@ -202,7 +202,7 @@ ALTER TABLE ONLY country_language
 
 
 --
--- Name: country_language_language_fk_fkey; Type: FK CONSTRAINT; Schema: public; Owner: ecommerce
+-- Name: country_language_language_fk_fkey; Type: FK CONSTRAINT; Schema: public; Owner: enrico
 --
 
 ALTER TABLE ONLY country_language
@@ -210,7 +210,7 @@ ALTER TABLE ONLY country_language
 
 
 --
--- Name: language_tweet_language_fk_fkey; Type: FK CONSTRAINT; Schema: public; Owner: ecommerce
+-- Name: language_tweet_language_fk_fkey; Type: FK CONSTRAINT; Schema: public; Owner: enrico
 --
 
 ALTER TABLE ONLY language_tweet
@@ -218,7 +218,7 @@ ALTER TABLE ONLY language_tweet
 
 
 --
--- Name: language_tweet_tweet_fk_fkey; Type: FK CONSTRAINT; Schema: public; Owner: ecommerce
+-- Name: language_tweet_tweet_fk_fkey; Type: FK CONSTRAINT; Schema: public; Owner: enrico
 --
 
 ALTER TABLE ONLY language_tweet
