@@ -1,10 +1,10 @@
 # standard library
 import base64
+import os
 
 # 3rd party
 import requests
 import io, json
-
 
 
 def connectingTwitter():
@@ -55,9 +55,13 @@ def connectingTwitter():
     for state in states_id:
         resp = requests.get(
             url,
-            params={'q': 'place:' + states_id.get(state) + ' ' + '#java' ,'result_type':'recent', 'count' : '1'},
+            params={'q': 'place:' + states_id.get(state) + ' ' + 'java' ,'result_type':'recent'},
             headers={'Authorization': 'Bearer {}'.format(resp_data['access_token'])})
         resp.raise_for_status()
         data = resp.json()
-        with open('/home/ubuntu/Desktop/developement/File/python_tweets_'+state+'.txt', 'w') as f:
+        '''Create Folder "File"'''
+        mypath = './File'
+        if not os.path.exists(mypath):
+            os.makedirs(mypath)
+        with open('./File/python_tweets_'+state+'.txt', 'w') as f:
             json.dump(data['statuses'], f)

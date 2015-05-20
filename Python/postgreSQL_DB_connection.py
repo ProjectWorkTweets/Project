@@ -1,9 +1,6 @@
 import psycopg2
 
-def connection():
-	try:
-		conn = psycopg2.connect("dbname='ecomm' user='ecommerce' host='localhost' password='password'")
-		print("Connected.")
-		conn.close()
-	except:
-		print("Can't connect to the DB.")
+conn = psycopg2.connect("dbname=projectworktweets user=enrico host=52.16.255.142 port=5432 password=DioCano")
+print("Connected.")
+conn.close()
+
