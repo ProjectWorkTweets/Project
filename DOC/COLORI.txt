@@ -8,4 +8,12 @@ JAVASCRIPT:#fa976e  rosa
 VISUAL BASIC:#f40202 rosso
 PHP:#b6ff00         verde oliva
 VISUAL BASIC .NET:white bianco
+PERL:#f805a9         rosa acceso//forse nn lo inseriamo
+R:#f805a9            rosa acceso
+DELPHI:#0094ff       blu
+MATLAB:#7f6123       sabbia
+RUBY:#4d0a0a         rosso scuro
+
+
+
 
