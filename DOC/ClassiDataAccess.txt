@@ -26,4 +26,5 @@ La classe DataAccess implementa dei metodi :
 *'Java'
 *'#12561a6'
 
--Get
+-DataAnalysis  conta i tweet per linguaggio in base al mese e allo stato, carica i dati nella tabella country_language
+*INSERT INTO country_language(month, n_tweet, country_fk, language_fk) VALUES('5', 242, 'IT', '2');
