@@ -3,7 +3,7 @@ Charts.Data
 Le classi:
 1)Country [idcountry,name]
 2)Languege [idlanguage,name,color]
-3)Tweet [idtweet,country,creationdate]
+3)Tweet [idtweet,country,creationdate, List<string> language_fk]
 
 Queste classi descrivono le tabelle del database.
 
@@ -15,15 +15,15 @@ La classe DataAccess implementa dei metodi :
 *'Italia'
 
 
--GetTweets ritorna List<Tweet>
-*1
-*Python
-*#fjwrif
-
+-GetTweets ritorna List<Tweet> 
+*1561248765468
+*IT
+*18-05-2015
+*{3, 5} (lista di linguaggi)
 
 -GetLanguages ritorna List<Language>
-*idtweet
-*'Italy'
-*'SUN Oct 14 2014'
+*2
+*'Java'
+*'#12561a6'
 
 -Get
