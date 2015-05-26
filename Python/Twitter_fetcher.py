@@ -62,8 +62,20 @@ l = cur.fetchone()
 while l != None:
     states_db_id[l[1]]=l[0]  #l[1] = name in countries table (Italy), l[0] = countryid in countries table (IT)
     l = cur.fetchone()
+cur.close()
 
-languages = {}
+languages_db_id = {}
+
+#Populates the dictionary with DB values
+cur = conn.cursor()
+cur.execute("SELECT idlanguage, name FROM languages;")
+l = cur.fetchone()
+while l != None:
+    languages_db_id[l[1]]=l[0]  #l[1] = name in languages table (Java), l[0] = languageid in countries table (2)
+    l = cur.fetchone()
+cur.close()
+
+
 
 
 def get_token():
@@ -79,27 +91,49 @@ def get_token():
     return resp_data['access_token']
 
 
-def get_tweets(word, token):
+def get_tweets(token):
 
     '''
     Returns:
       a list of tweets (dictionaries) as returned by twitter API
     '''
     url = 'https://api.twitter.com/1.1/search/tweets.json'
+    cur = conn.cursor()
+    cur2 = conn.cursor()
+    cur3 = conn.cursor()
 
     '''Create Folder "File"'''
 
-    mypath = './File'
+    '''mypath = './File'
     if not os.path.exists(mypath):
-        os.makedirs(mypath)
+        os.makedirs(mypath)'''
     for state in states_twitter_id:
-        resp = requests.get(
-            url,
-            params={'q': 'place:' + states_twitter_id[state]+ ' ' + word ,'result_type':'recent'},
-            headers={'Authorization': 'Bearer {}'.format(token)})
-        resp.raise_for_status()
-        data = resp.json()
-        with open('./File/python_tweets_'+state+'.txt', 'w') as f:
-            if len(data['statuses']) > 0:
-                for tweet in data['statuses']:
-                    json.dump(tweet['text']+" | "+states_db_id[state]+" | "+tweet['created_at']+" ///// ", f)
+        for language in languages_db_id:
+            resp = requests.get(
+                url,
+                params={'q': 'place:' + states_twitter_id[state]+ ' ' + language ,'result_type':'recent'},
+                headers={'Authorization': 'Bearer {}'.format(token)})
+            resp.raise_for_status()
+            data = resp.json()
+            for tweet in data['statuses']:
+                cur2.execute("SELECT count(idtweet) FROM tweets WHERE idtweet = %s", (str(tweet['id']),))
+                if cur2.fetchone()[0] == 0:
+                    cur.execute("INSERT INTO tweets (idtweet, country, tweet_text, creationdate) VALUES (%s, %s, %s, %s)", 
+                        (tweet['id'], states_db_id[state], tweet['text'], tweet['created_at']))
+                    cur.execute("INSERT INTO language_tweet(language_fk, tweet_fk) VALUES (%s, %s)", 
+                        (languages_db_id[language], tweet['id']))
+                else:
+                    cur3.execute("SELECT country FROM tweets WHERE idtweet = %s", (str(tweet['id']),))
+                    if cur3 == states_db_id[state]:
+                        cur.execute("INSERT INTO language_tweet(language_fk, tweet_fk) VALUES (%s, %s)", 
+                            (languages_db_id[language], tweet['id']))
+
+            '''with open('./File/python_tweets_Italy_'+language+'.txt', 'w') as f:
+                if len(data['statuses']) > 0:
+                    for tweet in data['statuses']:
+                        json.dump(tweet['text']+" | "+states_db_id["Italy"]+" | "+tweet['created_at']+" ///// ", f)'''
+    conn.commit()
+    cur.close()
+    cur2.close()
+    cur3.close()
+    conn.close()
