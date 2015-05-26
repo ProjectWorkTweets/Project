@@ -37,12 +37,12 @@ La classe DataAccess implementa dei metodi :
 { "id":"AT" , "title":"Austria" ..}
 ]' 
 
+
+
+[DA DECIDERE ] 
 Questo metodo dovrà salvare su un altro file, anche il mese e il numero di tweet per ogni linguaggio, in ciascun paese. Il file (GraphData.txt) pertanto, conterrà lo storico
 che verrà aggiornato ogni mese.
-'[
-{ "id":"CH" , "title":"Switzerland", "customData":"220" , "color":"red", "groupId" : "c#"},
-{ "id":"AT" , "title":"Austria" ..}
-]' 
 
 
--GetGraphData ritorna i dati 
+
+-GetGraphData ritorna i dati dal file MapData.txt , in formato JSON, da passare alla pagina html che deve visualizzare i dati sulla mappa 
