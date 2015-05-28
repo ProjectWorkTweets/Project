@@ -1,12 +1,5 @@
-'''
-Example of twitter API usage.
 
-Requires Twitter APP credentials stored in the following env vars:
-  APP_KEY
-  APP_SECRET
 
-Saves tweets in the DB.
-'''
 # standard library
 import base64
 import os
@@ -15,10 +8,20 @@ import os
 import requests
 import io, json
 import psycopg2
+import datetime
+from logentries import LogentriesHandler
+import logging
+
+
+log = logging.getLogger('logentries')
+log.setLevel(logging.INFO)
+# Note if you have set up the logentries handler in Django, the following line is not necessary
+log.addHandler(LogentriesHandler('ae523509-0ec4-47e2-920f-f24c12d15527'))
+
 
 ''' Dichiarazione di 3 vocabolari per gli stati e i linguaggi di programmazione '''
 
-#Vocabulary "state name: twitter state id" 
+#Vocabulary "state name: twitter state id" (sono gli id associati allo stato su twitter (usufruibili con le API)
 states_twitter_id = {
 "Austria" : "30410557050f13a5",
 "Belgium" : "78bfaf3f12c05982",
@@ -109,24 +112,58 @@ def get_tweets(token):
         os.makedirs(mypath)'''
     for state in states_twitter_id:
         for language in languages_db_id:
-            resp = requests.get(
-                url,
-                params={'q': 'place:' + states_twitter_id[state]+ ' ' + language ,'result_type':'recent'},
-                headers={'Authorization': 'Bearer {}'.format(token)})
+
+            if language == "C++":
+                resp = requests.get(
+                    url,
+                    params={'q': 'place:' + states_twitter_id[state] + ' cplusplus', 'count':3,'result_type':'recent'},
+                    headers={'Authorization': 'Bearer {}'.format(token)})
+
+            elif language == "C#":
+                resp = requests.get(
+                    url,
+                    params={'q': 'place:' + states_twitter_id[state] + ' csharp', 'count':3,'result_type':'recent'},
+                    headers={'Authorization': 'Bearer {}'.format(token)})
+
+            elif language == "C":
+                resp = requests.get(
+                    url,
+                    params={'q': 'place:' + states_twitter_id[state] + ' #c', 'count':3,'result_type':'recent'},
+                    headers={'Authorization': 'Bearer {}'.format(token)})
+
+            elif language == "PHP":
+                resp = requests.get(
+                    url,
+                    params={'q': 'place:' + states_twitter_id[state] + ' #php', 'count':3,'result_type':'recent'},
+                    headers={'Authorization': 'Bearer {}'.format(token)})
+
+            else:
+                resp = requests.get(
+                    url,
+                    params={'q': 'place:' + states_twitter_id[state] + ' ' + language, 'count':3,'result_type':'recent'},
+                    headers={'Authorization': 'Bearer {}'.format(token)})
+
             resp.raise_for_status()
             data = resp.json()
             for tweet in data['statuses']:
                 cur2.execute("SELECT count(idtweet) FROM tweets WHERE idtweet = %s", (str(tweet['id']),))
+
                 if cur2.fetchone()[0] == 0:
+                    #Creazione di un tipo "datetime" in python dalla data che ci arriva da twitter
+                    ts = datetime.datetime.strptime(tweet['created_at'],'%a %b %d %H:%M:%S +0000 %Y').strftime('%Y-%m-%d')
+
                     cur.execute("INSERT INTO tweets (idtweet, country, tweet_text, creationdate) VALUES (%s, %s, %s, %s)", 
-                        (tweet['id'], states_db_id[state], tweet['text'], tweet['created_at']))
+                        (tweet['id'], states_db_id[state], tweet['text'], ts))
+
                     cur.execute("INSERT INTO language_tweet(language_fk, tweet_fk) VALUES (%s, %s)", 
                         (languages_db_id[language], tweet['id']))
+                    print("nuovo tweet "+state+language)
                 else:
                     cur3.execute("SELECT country FROM tweets WHERE idtweet = %s", (str(tweet['id']),))
-                    if cur3 == states_db_id[state]:
+                    if cur3.fetchone()[0] == states_db_id[state]:
                         cur.execute("INSERT INTO language_tweet(language_fk, tweet_fk) VALUES (%s, %s)", 
                             (languages_db_id[language], tweet['id']))
+                        print("nuovo linguaggio"+state+language)
 
             '''with open('./File/python_tweets_Italy_'+language+'.txt', 'w') as f:
                 if len(data['statuses']) > 0:
