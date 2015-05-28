@@ -104,6 +104,7 @@ def get_tweets(token):
     cur = conn.cursor()
     cur2 = conn.cursor()
     cur3 = conn.cursor()
+    cur4 = conn.cursor()
 
     '''Create Folder "File"'''
 
@@ -146,6 +147,8 @@ def get_tweets(token):
             resp.raise_for_status()
             data = resp.json()
             for tweet in data['statuses']:
+
+                #Controllo che il tweet non sia gia stato salvato
                 cur2.execute("SELECT count(idtweet) FROM tweets WHERE idtweet = %s", (str(tweet['id']),))
 
                 if cur2.fetchone()[0] == 0:
@@ -161,9 +164,14 @@ def get_tweets(token):
                 else:
                     cur3.execute("SELECT country FROM tweets WHERE idtweet = %s", (str(tweet['id']),))
                     if cur3.fetchone()[0] == states_db_id[state]:
-                        cur.execute("INSERT INTO language_tweet(language_fk, tweet_fk) VALUES (%s, %s)", 
-                            (languages_db_id[language], tweet['id']))
-                        print("nuovo linguaggio"+state+language)
+                        #Controllo che quel dato tweet e quel dato linguaggio non siano gia presenti nel DB
+                        cur4.execute("SELECT count(*) FROM language_tweet WHERE tweet_fk = %s AND language_fk = %s", 
+                            (str(tweet['id']), languages_db_id[language]))
+                        if cur4.fetchone()[0] == 0:
+                            cur.execute("INSERT INTO language_tweet(language_fk, tweet_fk) VALUES (%s, %s)", 
+                                (languages_db_id[language], tweet['id']))
+                            print("nuovo linguaggio"+state+language)
+                    print("tweet gia presente")
 
             '''with open('./File/python_tweets_Italy_'+language+'.txt', 'w') as f:
                 if len(data['statuses']) > 0:
@@ -173,4 +181,5 @@ def get_tweets(token):
     cur.close()
     cur2.close()
     cur3.close()
+    cur4.close()
     conn.close()
