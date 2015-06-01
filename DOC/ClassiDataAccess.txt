@@ -4,7 +4,7 @@ Le classi:
 1)Country [idcountry,name]
 2)Languege [idlanguage,name,color]
 3)Tweet [idtweet,country,creationdate, List<string> language_fk]
-4)GraphData[idstate, statename, languagename, languagecolor, month, n_tweet] estende country, language  ========ES: ('IT', 'Italy', 'C#', 'red', 05, 245)
+4)GraphData[idstate, statename, languagename, languagecolor, month, n_tweet]  ========ES: ('IT', 'Italy', 'C#', 'red', 05, 245)
 
 Queste classi descrivono le tabelle del database.
 
@@ -33,9 +33,15 @@ La classe DataAccess implementa dei metodi :
 *VALUES('5', 242, 'IT', '2');
 
 
+<<<<<<< HEAD
 -SaveDataAnalysis ottiene i dati della tabella country_language(sommando i tweet totali per ogni paese e prendendo solo il linguaggio più usato per ogni paese), li salva
  su file in formato JSON(MapData.txt), l'oggetto deve essere strutturato in questo modo:
 
+=======
+-SaveDataAnalysis ottiene i dati della tabella country_language(sommando i tweet totali per ogni paese e prendendo solo il linguaggio più usato per ogni paese PER IL MESE
+CORRENTE ), li salva
+ su DATABASE in tabella cache, l'oggetto deve essere strutturato in questo modo in pagina web:
+>>>>>>> origin/master
 '[
 { "id":"CH" , "title":"Switzerland", "customData":"c# (220 tweet)" , "color":"red", "groupId" : "c#"},
 { "id":"AT" , "title":"Austria" ..}
@@ -43,7 +49,7 @@ La classe DataAccess implementa dei metodi :
 
 
 
-[DA DECIDERE ] 
+[DA DECIDERE ] possibile serializzare in XML per non interrogare il database ad ogni richiesta di visualizzazione su grafico
 Questo metodo dovrà salvare su un altro file, anche il mese e il numero di tweet per ogni linguaggio, in ciascun paese. Il file (GraphData.txt) pertanto, conterrà lo storico
 che verrà aggiornato ogni mese.
 
