@@ -32,7 +32,7 @@ states_twitter_id = {
 "Denmark" : "c29833e68a86e703",
 "Estonia" : "e222580e9a5Bb499",
 "Finland" : "e7c97cdfef3a741a",
-"France" : "991b4344edc2d528",
+"France" : "991b4344edc2d520",
 "Germany" : "fdcd221ac44fa326",
 "Great Britain" : "6416b8512febefc9",
 "Greece" : "2ee7eeaa84dbe65a",
