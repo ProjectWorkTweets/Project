@@ -1,0 +1,447 @@
+﻿@{
+    ViewBag.Title = "Graph";
+}
+
+<h2>Most tweeted programming languages in @ViewBag.Country (monthly trend)</h2>
+<div id="chartdiv"></div>
+<input type="hidden" id="stateid" data-state="@ViewBag.id" />
+
+
+@section scripts {
+    <script type="text/javascript">
+
+    var id = $("#stateid").data("state");
+
+
+
+    $.ajax({
+        url: "/api/charts/" + id,
+        type: 'GET',
+        dataType: 'json'
+
+    }).done(function (data) {
+
+
+        var chartData = JSON.parse(data);
+
+        var chart = AmCharts.makeChart("chartdiv", {
+            "type": "serial",
+            "theme": "dark",
+            path: "/Scripts/amcharts_3.14.2.free/amcharts",
+            "fontFamily": "Lato",
+            "autoMargins": true,
+            "addClassNames": true,
+            "zoomOutText": "",
+            "fontFamily": "Trebuchet MS",
+            "defs": {
+                "filter": [
+        {
+            "id": "shadow",
+            "width": "150%",
+            "height": "150%",
+            "feOffset": {
+                "result": "offOut",
+                "in": "SourceAlpha",
+                "dx": "2",
+                "dy": "2"
+            },
+            "feGaussianBlur": {
+                "result": "blurOut",
+                "in": "offOut",
+                "stdDeviation": "10"
+            },
+            "feColorMatrix": {
+                "result": "blurOut",
+                "type": "matrix",
+                "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .2 0"
+            },
+            "feBlend": {
+                "in": "SourceGraphic",
+                "in2": "blurOut",
+                "mode": "normal"
+            }
+        }
+                ]
+            },
+            "fontSize": 15,
+            "pathToImages": "../amcharts/images/",
+            "dataProvider": chartData,
+            "dataDateFormat": "MM-YYYY",
+            "marginRight": 17,
+            "marginTop": 17,
+            "marginLeft": 17,
+            "autoMarginOffset": 20,
+            "categoryField": "date",
+            "categoryAxis": {
+
+                "gridAlpha": 0.07,
+                "axisColor": "#DADADA",
+                "startOnAxis": true,
+                "tickLength": 0,
+                "parseDates": true,
+                "minPeriod": "MM",
+                "dateFormats": [{
+                    period: 'MM',
+                    format: 'MM YYYY'
+                }, {
+                    period: 'YYYY',
+                    format: 'MM YYYY'
+                }],
+            },
+            "valueAxes": [
+                {
+                    "id": "g1",
+                    "axisColor": "#e97f00",
+                    "axisThickness": 2,
+                    "position": "left",
+                    "ignoreAxisWidth": true,
+                    "gridAlpha": 0.07,
+                    "axisAlpha": 0,
+                    "inside": true,
+                    "offset": 20
+                }, {
+                    "id": "g2",
+                    "axisColor": "#003a1c",
+                    "axisThickness": 2,
+                    "position": "right",
+                    "ignoreAxisWidth": true,
+                    "gridAlpha": 0.07,
+                    "axisAlpha": 0,
+                    "inside": true,
+                    "offset": 20
+                }, {
+                    "id": "g3",
+                    "axisColor": "#030469",
+                    "axisThickness": 2,
+                    "offset": 50,
+                    "position": "left",
+                    "ignoreAxisWidth": true,
+                    "gridAlpha": 0.07,
+                    "axisAlpha": 0,
+                    "inside": true,
+                    "offset": 20
+                }, {
+                    "id": "g4",
+                    "axisColor": "#bf41a6",
+                    "axisThickness": 2,
+                    "position": "left",
+                    "ignoreAxisWidth": true,
+                    "gridAlpha": 0.07,
+                    "axisAlpha": 0,
+                    "inside": true,
+                    "offset": 20
+                }, {
+                    "id": "g5",
+                    "axisColor": "#fa976e",
+                    "axisThickness": 2,
+                    "position": "right",
+                    "ignoreAxisWidth": true,
+                    "gridAlpha": 0.07,
+                    "axisAlpha": 0,
+                    "inside": true,
+                    "offset": 20
+                }, {
+                    "id": "g6",
+                    "axisColor": "#f40202",
+                    "axisThickness": 2,
+                    "offset": 50,
+                    "position": "left",
+                    "ignoreAxisWidth": true,
+                    "gridAlpha": 0.07,
+                    "axisAlpha": 0,
+                    "inside": true,
+                    "offset": 20
+                }, {
+                    "id": "g7",
+                    "axisColor": "white",
+                    "axisThickness": 2,
+                    "position": "left",
+                    "ignoreAxisWidth": true,
+                    "gridAlpha": 0.07,
+                    "axisAlpha": 0,
+                    "inside": true,
+                    "offset": 20
+                }, {
+                    "id": "g8",
+                    "axisColor": "#ffee05",
+                    "axisThickness": 2,
+                    "position": "right",
+                    "ignoreAxisWidth": true,
+                    "gridAlpha": 0.07,
+                    "axisAlpha": 0,
+                    "inside": true,
+                    "offset": 20
+                }, {
+                    "id": "g9",
+                    "axisColor": "#00ffff",
+                    "axisThickness": 2,
+                    "offset": 50,
+                    "position": "left",
+                    "ignoreAxisWidth": true,
+                    "gridAlpha": 0.07,
+                    "axisAlpha": 0,
+                    "inside": true,
+                    "offset": 20
+                },
+                {
+                    "id": "g10",
+                    "axisColor": "#50e323",
+                    "axisThickness": 2,
+                    "offset": 50,
+                    "position": "left",
+                    "ignoreAxisWidth": true,
+                    "gridAlpha": 0.07,
+                    "axisAlpha": 0,
+                    "inside": true,
+                    "offset": 20
+                }
+            ],
+            "graphs": [
+                {
+                    "id": "g1",
+                    "type": "line",
+                    "title": "Python",
+                    "valueField": "Python",
+                    "lineAlpha": 1.2,
+                    "lineColor": "#e97f00",
+                    "showBalloon": true, "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletAlpha": 1,
+                    "bulletSize": 11,
+                    "stackable": false,
+                    "bulletColor": "#e97f00",
+                    "bulletBorderColor": "#FFFFFF",
+                    "bulletBorderThickness": 3,
+                    "balloonText": "<div class = 'balloontext' style='color:#e97f00;'>[[title]] : [[value]]</div>"
+
+                },
+                {
+                    "id": "g2",
+                    "type": "line",
+                    "title": "C++",
+                    "valueField": "C++",
+                    "lineAlpha": 1.2,
+                    "lineColor": "DeepPink",
+                    "showBalloon": true,
+                    "balloonText": "<div class = 'balloontext' style='color:DeepPink;'>[[title]] : [[value]]</div>",
+                    "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletAlpha": 1,
+                    "bulletSize": 11,
+                    "stackable": false,
+                    "bulletColor": "DeepPink",
+                    "bulletBorderColor": "#FFFFFF",
+                    "bulletBorderThickness": 3
+                },
+                {
+
+                    "id": "g3",
+                    "type": "line",
+                    "title": "RUBY",
+                    "valueField": "RUBY",
+                    "lineAlpha": 1.2,
+                    "lineColor": "#cc00cc",
+                    "showBalloon": true,
+                    "balloonText": "<div class = 'balloontext' style='color:#cc00cc;'>[[title]] : [[value]]</div>",
+                    "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletAlpha": 1,
+                    "bulletSize": 11,
+                    "stackable": false,
+                    "bulletColor": "#cc00cc",
+                    "bulletBorderColor": "#FFFFFF",
+                    "bulletBorderThickness": 3
+
+                }
+                ,
+                {
+
+                    "id": "g4",
+                    "type": "line",
+                    "title": "C#",
+                    "valueField": "C#",
+                    "lineAlpha": 1.2,
+                    "lineColor": "MediumSeaGreen ",
+                    "showBalloon": true,
+                    "balloonText": "<div class = 'balloontext' style='color:MediumSeaGreen ;'>[[title]] : [[value]]</div>",
+                    "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletAlpha": 1,
+                    "bulletSize": 11,
+                    "stackable": false,
+                    "bulletColor": "MediumSeaGreen ",
+                    "bulletBorderColor": "#FFFFFF",
+                    "bulletBorderThickness": 3
+
+                }
+                ,
+                {
+
+                    "id": "g5",
+                    "type": "line",
+                    "title": "C",
+                    "valueField": "C",
+                    "lineAlpha": 1.2,
+                    "lineColor": "#fa976e",
+                    "showBalloon": true,
+                    "balloonText": "<div class = 'balloontext' style='color:#fa976e;'>[[title]] : [[value]]</div>",
+                    "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletAlpha": 1,
+                    "bulletSize": 11,
+                    "stackable": false,
+                    "bulletColor": "#fa976e",
+                    "bulletBorderColor": "#FFFFFF",
+                    "bulletBorderThickness": 3
+
+                }
+                ,
+                {
+
+                    "id": "g6",
+                    "type": "line",
+                    "title": "PHP",
+                    "valueField": "PHP",
+                    "lineAlpha": 1.2,
+                    "lineColor": "#f40202",
+                    "showBalloon": true,
+                    "balloonText": "<div class = 'balloontext' style='color:#f40202;'>[[title]] : [[value]]</div>",
+                    "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletAlpha": 1,
+                    "bulletSize": 11,
+                    "stackable": false,
+                    "bulletColor": "#f40202",
+                    "bulletBorderColor": "#FFFFFF",
+                    "bulletBorderThickness": 3
+
+                }
+                ,
+                {
+
+                    "id": "g7",
+                    "type": "line",
+                    "title": "Haskell",
+                    "valueField": "Haskell",
+                    "lineAlpha": 1.2,
+                    "lineColor": "white",
+                    "showBalloon": true,
+                    "balloonText": "<div class = 'balloontext' style='color:white;'>[[title]] : [[value]]</div>",
+                    "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletAlpha": 1,
+                    "bulletSize": 11,
+                    "stackable": false,
+                    "bulletColor": "white",
+                    "bulletBorderColor": "#FFFFFF",
+                    "bulletBorderThickness": 3
+
+                }
+                ,
+                {
+
+                    "id": "g8",
+                    "type": "line",
+                    "title": "Java",
+                    "valueField": "Java",
+                    "lineAlpha": 1.2,
+                    "lineColor": "#ffee05",
+                    "showBalloon": true,
+                    "balloonText": "<div class = 'balloontext' style='color:#ffee05;'>[[title]] : [[value]]</div>",
+                    "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletAlpha": 1,
+                    "bulletSize": 11,
+                    "stackable": false,
+                    "bulletColor": "#ffee05",
+                    "bulletBorderColor": "#FFFFFF",
+                    "bulletBorderThickness": 3
+
+                }
+                ,
+                {
+
+                    "id": "g9",
+                    "type": "line",
+                    "title": "JavaScript",
+                    "valueField": "JavaScript",
+                    "lineAlpha": 1.2,
+                    "lineColor": "#00ffff",
+                    "showBalloon": true,
+                    "balloonText": "<div class = 'balloontext' style='color:#00ffff;'>[[title]] : [[value]]</div>",
+                    "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletAlpha": 1,
+                    "bulletSize": 11,
+                    "stackable": false,
+                    "bulletColor": "#00ffff",
+                    "bulletBorderColor": "#FFFFFF",
+                    "bulletBorderThickness": 3
+
+                }
+                ,
+                {
+
+                    "id": "g10",
+                    "type": "line",
+                    "title": "Visual Basic",
+                    "valueField": "Visual Basic",
+                    "lineAlpha": 1.2,
+                    "lineColor": "#50e323",
+                    "showBalloon": true,
+                    "balloonText": "<div class = 'balloontext' style='color:#50e323;'>[[title]] : [[value]]</div>",
+                    "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletAlpha": 1,
+                    "bulletSize": 11,
+                    "stackable": false,
+                    "bulletColor": "#50e323",
+                    "bulletBorderColor": "#FFFFFF",
+                    "bulletBorderThickness": 3
+
+                }
+            ],
+            "chartCursor": {
+                "cursorAlpha": 0.3,
+                "zoomable": false,
+                "cursorColor": "black",
+                "categoryBalloonColor": "#0092ff",
+                "fullWidth": true,
+                "categoryBalloonDateFormats": [{ period: "MM", format: "MM, YYYY" }],
+                "balloonPointerOrientation": "vertical",
+                "categoryBalloonAlpha": 0.92,
+                "categoryBalloonDateFormat": "MMM-YYYY"
+            },
+            "balloon": {
+                "borderAlpha": 0,
+                "fillAlpha": 0,
+                "shadowAlpha": 0,
+                "offsetX": 40,
+                "offsetY": -50
+            }
+        });
+
+        // we zoom chart in order to have better blur (form side to side)
+        chart.addListener("dataUpdated", zoomChart);
+
+        function zoomChart() {
+            chart.zoomToIndexes(1, chartData.length - 2);
+        }
+
+
+    }).error(function (e) {
+        alert('errore ' + e.statusText);
+    })
+
+
+
+
+
+    </script>
+}
+
+
+<script src="~/Scripts/amcharts_3.14.2.free/amcharts/amcharts.js"></script>
+<script src="~/Scripts/amcharts_3.14.2.free/amcharts/serial.js"></script>
+<script src="~/Scripts/amcharts_3.14.2.free/amcharts/themes/dark.js"></script>
+

@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+
+}
+
+
+<h2>Most tweeted programming languages in Europe (last month)</h2>
+
+
+<div id="mapdiv"></div>
+
+<input type="hidden" id="languages" data-languages="@ViewBag.Languages"/>
+<input type="hidden" id="mapdata" data-mapdata="@ViewBag.MapData" />
+
+
+@section scripts {
+    <script type="text/javascript">
+
+        $(function () {
+
+            
+            var languages = $("#languages").data("languages");
+            var mapdata = $("#mapdata").data("mapdata");
+            var prova2 = $("#prova2");
+
+            var map = AmCharts.makeChart("mapdiv", {
+
+                type: "map",
+                "theme": "dark",
+                path: "/Scripts/ammap_3.14.2.free/ammap/",
+                "marginRight": 80,
+                "marginTop": 17,
+                "autoMarginOffset": 20,
+                "fontFamily": "Trebuchet MS",
+                dataProvider: {
+                    map: "worldLow",
+                    zoomLevel: 3.5,
+                    zoomLongitude: 10,
+                    zoomLatitude: 52,
+                    areas: mapdata
+                },
+
+                areasSettings: {
+                    rollOverOutlineColor: "#FFFFFF",
+                    rollOverColor: "#6666ff",
+                    alpha: 0.8,
+                    unlistedAreasAlpha: 0.1,
+                    balloonText: "[[title]] main language is : [[customData]]<br/><p style='color:green;'>Click to view details</p>",
+                    selectable: true,
+                    selectedColor: "#3333ff"
+
+                },
+
+
+                legend: {
+                    align:"center",
+                    width: "100%",
+                    marginRight: 27,
+                    marginLeft: 27,
+                    equalWidths: false,
+                    backgroundAlpha: 0.5,
+                    backgroundColor: "#FFFFFF",
+                    borderColor: "#ffffff",
+                    color: "black",
+                    borderAlpha: 1,
+                    top: 550,
+                    left: 0,
+                    horizontalGap: 10,
+                    data: languages
+                },
+                "export": {
+                    "enabled": true
+                }
+
+            });
+
+
+            map.addListener("clickMapObject", function (event) {
+                var id = event.mapObject.id;
+                window.location.href = "/home/graphs/" + id;
+               
+            });
+
+            
+
+
+            
+            
+          
+
+        })
+
+    </script>
+}
+
+<script src="~/Scripts/ammap_3.14.2.free/ammap/ammap.js"></script>
+<script src="~/Scripts/ammap_3.14.2.free/ammap/maps/js/worldLow.js"></script>
+<script src="~/Scripts/ammap_3.14.2.free/ammap/themes/dark.js"></script>
